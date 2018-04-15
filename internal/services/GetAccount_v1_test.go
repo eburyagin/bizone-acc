@@ -11,7 +11,7 @@ import (
 	nats "github.com/nats-io/go-nats"
 )
 
-func TestDo(t *testing.T) {
+func TestGetAccount_v1(t *testing.T) {
 	cf := "../../" + os.Getenv("BZ_TEST_CONFIG_FILE")
 	config, _ := cfg.Load(cf)
 	ds.Connect(config)
