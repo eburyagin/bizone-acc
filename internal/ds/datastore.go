@@ -5,7 +5,7 @@ import (
 	"github.com/go-pg/pg"
 )
 
-func Connect(config *cfg.Config) (*pg.DB, error) {
+func NewConnect(config *cfg.Config) (*pg.DB, error) {
 	ds := pg.Connect(&pg.Options{
 		Addr:     config.Datastore.Addr,
 		User:     config.Datastore.User,

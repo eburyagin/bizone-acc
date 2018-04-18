@@ -10,7 +10,7 @@ import (
 func TestConnection(t *testing.T) {
 	cf := "../../" + os.Getenv("BZ_TEST_CONFIG_FILE")
 	config, err := cfg.Load(cf)
-	ds, err := Connect(config)
+	ds, err := NewConnect(config)
 	if err != nil {
 		t.Errorf("Connect(%q) = %v, error: %s", config, ds, err)
 	}
@@ -19,7 +19,7 @@ func TestConnection(t *testing.T) {
 func TestDisconnection(t *testing.T) {
 	cf := "../../" + os.Getenv("BZ_TEST_CONFIG_FILE")
 	config, _ := cfg.Load(cf)
-	ds, _ := Connect(config)
+	ds, _ := NewConnect(config)
 	err := Disconnect(ds)
 	if err != nil {
 		t.Errorf("Disconnect(%q), error: %s", ds, err)

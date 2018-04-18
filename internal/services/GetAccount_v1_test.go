@@ -14,7 +14,7 @@ import (
 func TestGetAccount_v1(t *testing.T) {
 	cf := "../../" + os.Getenv("BZ_TEST_CONFIG_FILE")
 	config, _ := cfg.Load(cf)
-	ds.Connect(config)
+	ds.NewConnect(config)
 	StartGetAccount_v1(config)
 
 	nc, _ := nats.Connect(config.Bus.Urls)

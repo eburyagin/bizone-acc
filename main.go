@@ -6,7 +6,6 @@ import (
 	"runtime"
 
 	"github.com/eburyagin/bizone-acc/internal/cfg"
-	"github.com/eburyagin/bizone-acc/internal/ds"
 	"github.com/eburyagin/bizone-acc/internal/services"
 )
 
@@ -19,11 +18,6 @@ func main() {
 	config, err := cfg.Load(*cf)
 	if err != nil {
 		log.Fatalln("Ошибка загрузки конфигурации!")
-	}
-
-	_, err = ds.Connect(config)
-	if err != nil {
-		log.Fatalln("Ошибка подключения к хранилищу данных!")
 	}
 
 	services.StartServices(config)
